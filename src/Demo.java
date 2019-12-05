@@ -1,3 +1,5 @@
+import org.omg.PortableServer.POAPackage.ObjectAlreadyActive;
+
 import java.util.Scanner;
 
 public class Demo {
@@ -15,12 +17,17 @@ public class Demo {
         if(bakery.cakeSlices > 0){
           //Sell a slice
           bakery.cakeSlices = bakery.cakeSlices - 1;
+          //profits from selling
+          bakery.profits += 2;
         }
         else{
           //else bake a cake and sell a slice
           bakery.cakeSlices = 10;
+          //cost from baking a new cake
           bakery.profits -= 5;
+          //sell a slice
           bakery.cakeSlices -= 1;
+          //profits
           bakery.profits += 2;
         }
       }
